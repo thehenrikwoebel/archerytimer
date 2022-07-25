@@ -22,7 +22,10 @@
                 <button id="reset_button" class="button" @click="reset()">Reset</button>
             </div>
             <div id="input_div">
+                <h3>Sekunden</h3>
                 <input type="text" v-model="time" @input="setTime()" id="input">
+                <h3>Schriftgröße</h3>
+                <input type="text" v-model="fontSize" @input="setFontSize()" id="input">
             </div>
         </main>
     </body>

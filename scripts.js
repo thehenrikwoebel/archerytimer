@@ -5,7 +5,8 @@ let app = Vue.createApp({
             seconds: 180,
             time: 180,
             stop: false,
-            darkmode: false
+            darkmode: false,
+            fontSize: 13
         }
     },
     methods: {
@@ -57,6 +58,9 @@ let app = Vue.createApp({
         },
         setTime() {
             this.seconds = this.time
+        },
+        setFontSize() {
+            this.$refs.text.style.fontSize = this.fontSize.toString() + "em"
         }
     }
 })
