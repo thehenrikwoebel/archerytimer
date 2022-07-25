@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html id="html">
+    <head>
+        <title id="title">Schießampel</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="body">
+        <header>
+            <h1><a href="/Index.html" class="header"><p class="header_text">Schießampel</p></a></h1>
+            <h2><p id="header_p">Passe: {{ passe }}</p></h2>
+        </header>
+        <main id="main">
+            <div id="div_button_darkmode">
+                <button id="darkmode_button" class="button" @click="darkmode_test()">Darkmode aktivieren</button>
+            </div>
+            <p id="time_text" ref="text">{{ seconds }}</p>
+            <div id="div_buttons">
+                <button id="start_button" class="button" @click="stop = false; clock()">Start</button>
+                <button id="stop_button" class="button" @click="stop = true">Stop</button>
+                <button id="reset_button" class="button" @click="reset()">Reset</button>
+            </div>
+            <div id="input_div">
+                <input type="text" v-model="time" @input="setTime()" id="input">
+            </div>
+        </main>
+    </body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="scripts.js"></script>
+</html>
