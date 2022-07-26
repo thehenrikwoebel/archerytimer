@@ -14,18 +14,25 @@ let app = Vue.createApp({
             return new Promise(resolve => setTimeout(resolve, ms));
         },
         async clock() {
-            this.seconds = this.time
             while(this.seconds > 0 && this.stop === false) {
                 switch(this.seconds) {
-                    case this.time - 10:
+                    case this.time:
+                        this.playSound1()
+                        break;
+                    case this.time - 9:
                         this.passe++
                         html.style.backgroundColor = "green"
+                        this.playSound2()
                         break;
-                    case this.time / 2:
+                    case this.time / 2 + 1:
                         html.style.backgroundColor = "yellow"
                         break;
-                    case this.time / 4:
+                    case this.time / 4 + 1:
+                        html.style.backgroundColor = "orange"
+                        break;
+                    case 1:
                         html.style.backgroundColor = "red"
+                        this.playSound3()
                         break;
                 }
                 this.seconds -= 1
@@ -46,8 +53,11 @@ let app = Vue.createApp({
             }
             this.darkmode = !this.darkmode
         },
-        reset() {
+        setTime() {
             this.seconds = this.time
+        },
+        reset() {
+            this.setTime()
             this.stop = true
             if(this.darkmode === true) {
                 html.style.backgroundColor = 'black' 
@@ -56,11 +66,20 @@ let app = Vue.createApp({
                 html.style.backgroundColor = 'white'
             }
         },
-        setTime() {
-            this.seconds = this.time
-        },
         setFontSize() {
             this.$refs.text.style.fontSize = this.fontSize.toString() + "em"
+        },
+        playSound1() {
+            let sound = new Audio("./sounds/pfeifton1.mp3")
+            sound.play()
+        },
+        playSound2() {
+            let sound = new Audio("./sounds/pfeifton2.mp3")
+            sound.play()
+        },
+        playSound3() {
+            let sound = new Audio("./sounds/pfeifton3.mp3")
+            sound.play()
         }
     }
 })
