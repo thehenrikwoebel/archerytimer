@@ -59,6 +59,7 @@ let app = Vue.createApp({
         reset() {
             this.setTime()
             this.stop = true
+            this.playSound3()
             if(this.darkmode === true) {
                 html.style.backgroundColor = 'black' 
             }
@@ -80,6 +81,9 @@ let app = Vue.createApp({
         playSound3() {
             let sound = new Audio("./sounds/pfeifton3.mp3")
             sound.play()
+        },
+        test() {
+            console.log("es hat funktioniert!");
         }
     }
 })
