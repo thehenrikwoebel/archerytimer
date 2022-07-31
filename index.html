@@ -18,7 +18,7 @@
             <p id="time_text" ref="text">{{ seconds }}</p>
             <div id="div_buttons">
                 <button id="start_button" class="button" @click="stop = false; clock()">Start</button>
-                <button id="stop_button" class="button" @click="stop = true">Stop</button>
+                <button id="stop_button" class="button" @click="stop()">Stop</button>
                 <button id="reset_button" class="button" @click="reset()">Reset</button>
             </div>
             <div id="input_div">

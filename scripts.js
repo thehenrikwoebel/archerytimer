@@ -67,6 +67,10 @@ let app = Vue.createApp({
                 html.style.backgroundColor = 'white'
             }
         },
+        stop() {
+            this.stop = true
+            this.playSound3()
+        },
         setFontSize() {
             this.$refs.text.style.fontSize = this.fontSize.toString() + "em"
         },
