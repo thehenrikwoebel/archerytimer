@@ -54,12 +54,15 @@ let app = Vue.createApp({
             this.darkmode = !this.darkmode
         },
         setTime() {
-            this.seconds = this.time
+            if(this.stop) {
+                this.seconds = this.time
+            }
         },
         reset() {
             this.setTime()
             this.stop = true
             this.playSound3()
+            this.setTime()
             if(this.darkmode === true) {
                 html.style.backgroundColor = 'black' 
             }
