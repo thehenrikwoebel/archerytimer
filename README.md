@@ -1,2 +1,2 @@
 # archerytimer
-A Simple Timer for the Sport of Archery
+A simple timer for the sport of Archery
