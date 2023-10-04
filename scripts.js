@@ -30,7 +30,7 @@ let app = Vue.createApp({
                     case this.time / 4 + 1:
                         html.style.backgroundColor = "orange"
                         break;
-                    case 1:
+                    case this.time - (this.time):
                         html.style.backgroundColor = "red"
                         this.playSound3()
                         break;
