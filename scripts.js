@@ -32,9 +32,9 @@ let app = Vue.createApp({
                         break;
                 }
                 this.seconds -= 1
-                this.playSound3()
                 await this.sleep(1000)
             }
+            this.playSound3()
         },
         darkmode_test() {
             var darkmode_button = document.getElementById("darkmode_button");
